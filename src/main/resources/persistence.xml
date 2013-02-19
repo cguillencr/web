@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+	http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	
+	<persistence-unit name="springappPU" transaction-type="RESOURCE_LOCAL">
+	<class>org.monarca.entities.Build</class>
+	<class>org.monarca.entities.Project</class>
+	<class>org.monarca.entities.User</class>
+	<class>org.monarca.entities.Role</class>
+	<class>org.monarca.entities.Activity</class>
+	<class>org.monarca.entities.UserRole</class>
+	<class>org.monarca.entities.Topic</class>
+	<class>org.monarca.entities.Branch</class>
+	
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,324 @@
+/*-----------------------------------------------------------------------------------------------*/
+/*                                            Cuadro de propiedades                              */
+/*-----------------------------------------------------------------------------------------------*/
+.invisible {
+    position: absolute;
+    left: -9999px;
+}
+
+.one-column-emphasis
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	/*margin: 45px;*/
+	width: 400px;
+	text-align: left;
+	border-collapse: collapse;
+	background: #FFF;
+}
+.one-column-emphasis th
+{
+	font-size: 13px;
+	font-weight: bold;
+	padding: 4px;
+}
+.one-column-emphasis td
+{
+	border-top: 1px solid #e8edff;
+	border-bottom: 1px solid #e8edff;
+	
+}
+.oce-first
+{
+	background: #EFF1FF;
+}
+.one-column-emphasis tr:hover td
+{
+	color: white;
+	background: #46a3ca;
+}
+.one-column-emphasis caption
+{
+
+}
+
+/*-----------------------------------------------------------------------------------------------*/
+/*                                            SyntaxHighligher                                   */
+/*-----------------------------------------------------------------------------------------------*/
+.container
+{
+	width:205%;
+}
+.code-highlighter
+{
+	font-family: "Consolas", "Courier New", Courier, mono, serif;
+	font-size: 12px;
+	background-color: #E7E5DC;
+	padding-top: 1px; /* adds a little border on top when controls are hidden */
+	float:left;
+	min-height: 350px;
+	width:100%;
+}
+
+/* clear styles */
+.code-highlighter ol,
+.code-highlighter ol li,
+
+
+.code-highlighter ol li span 
+{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.code-highlighter a,
+.code-highlighter a:hover
+{
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.code-highlighter ol
+{
+	list-style: decimal; /* for ie */
+	background-color: #fff;
+	margin: 0px 0px 0px 45px !important; /* 1px bottom margin seems to fix occasional Firefox scrolling */
+	padding: 0px;
+	color: #5C5C5C;
+}
+
+.code-highlighter ol li,
+.code-highlighter .columns div
+{
+	list-style: decimal-leading-zero; /* better look for others, override cascade from OL */
+	list-style-position: outside !important;
+	border-left: 3px solid #6CE26C;
+	background-color: #F8F8F8;
+	color: #5C5C5C;
+	padding: 0 3px 0 10px !important;
+	margin: 0 !important;
+	line-height: 14px;
+}
+/*
+.code-highlighter.nogutter ol li,
+.code-highlighter.nogutter .columns div
+{
+	border: 0;
+}
+*/
+.code-highlighter .columns
+{
+	background-color: #F8F8F8;
+	color: gray;
+	overflow: hidden;
+	width: 100%;
+}
+
+.code-highlighter .columns div
+{
+	padding-bottom: 5px;
+}
+
+.code-highlighter ol li.alt
+{
+	background-color: #FFF;
+	color: inherit;
+}
+
+/* Language specific styles */
+
+.code-highlighter .comment, .code-highlighter .comments { color: #008200; background-color: inherit; }
+.code-highlighter .string { color: blue; background-color: inherit; }
+.code-highlighter .keyword { color: #069; font-weight: bold; background-color: inherit; }
+.code-highlighter .keyword-with-tooltip { color: #3366FF; background-color: inherit; }
+.code-highlighter .preprocessor { color: gray; background-color: inherit; }
+.code-highlighter .text { color: #008200; background-color: inherit; }
+.code-highlighter  .IntegerLiteral
+{
+	color:#8258FA;
+}
+.code-highlighter .FQNReference
+{
+	color: green; 
+}
+
+.code-highlighter span .show-tooltip-text { display: none; position: absolute; font-size: 0.9em; background-image: url(bg.gif); background-repeat: repeat-x; padding: 6px; padding-left: 12px; padding-right: 12px; color: white; }
+
+.code-highlighter  .ids
+{
+	color: black; 
+}
+
+.code-highlighter  .hover-text
+{
+	background: #88DF19; 
+}
+
+.code-highlighter .selectedDark  li 
+{
+	background: #c6c6c6;
+	color: inherit;
+}
+
+.code-highlighter span.selectedDark 
+{
+	background: #c6c6c6;
+	color: inherit;
+}
+
+.code-highlighter .selectedDark  li.alt
+{
+	background: #e0e0e0;
+	color: inherit;
+}
+
+.code-highlighter .selected  li 
+{
+	background: #88DF19;
+	color: inherit;
+}
+
+.code-highlighter .selected  li.alt
+{
+	background: #84eb1a;
+	color: inherit;
+}
+
+.code-highlighter span.selected 
+{
+	background: #88DF19;
+	color: inherit;
+}
+
+
+span .executed-code
+{
+	background-color:#a8f5b5;
+}
+
+/* .executed-code ol li.alt */
+/* { */
+/* 	background-color:#d6fea9; */
+/* } */
+
+/* span .executed-code{ */
+	
+/* } */
+
+span .non-executed-code
+{
+	background-color:#F0C1B6;
+}
+
+/* .non-executed-code ol li.alt */
+/* { */
+/* 	background-color:#F0C1B6; */
+/* } */
+
+
+/*-----------------------------------------------------------------------------------------------*/
+/*                                            TOOLTIP                                            */
+/*-----------------------------------------------------------------------------------------------*/
+
+.show-tooltip { /* This is the hook that the jQuery script will use */
+	background: transparent url(images/help.gif) no-repeat right;
+	color: #3366FF;
+	cursor: pointer; 
+	position: relative; /* This contains the .toolTipWrapper div that is absolutely positioned  */
+}
+#texto{
+	width: 500px;
+	padding:20px;
+	margin:auto;
+}
+#floatingPanel{
+	position:fixed;
+	color: #000;
+	font-weight: bold;
+	text-align: -webkit-center;
+	float:right;
+	padding:0px;
+	min-width:350px;
+	max-width:350px;
+	margin-left:2px;
+	margin:auto;
+	overflow-x:hidden; 
+}		
+#ppContainer{
+	
+	position:fixed;
+	right:400px;
+	top:120px;
+}	
+
+#propertyPanel{
+	position:relative;
+	right:0px;
+	top:0px;
+	padding:20px;
+	padding:0px;
+	margin:auto;
+	overflow-x:hidden; 
+	border-top: 2px solid #888585;
+
+}	
+
+#viewerPanel{
+	position:relative;
+	padding:20px;
+	margin:auto;
+	overflow-x:hidden; 
+	border-top: 1px solid #888585;
+	text-align: left;
+	
+}
+
+#property-header
+{
+	width:100%;
+	cursor:move;
+	height:30px;
+	font-size:20px;
+}
+
+.goTo, .search , .goToInnerFile{
+	float:right;
+	margin-right:2px;	
+}
+
+.boldText
+{
+	font-weight: bold;
+}
+
+
+.header_wrapper {                                                                                           
+      background: url(junit-images/bg_header_default.png) repeat-x;
+    }   
+     .header { 
+      background-repeat: repeat-x;
+      background-position: center center;
+      padding: 15px;
+      overflow: hidden; /* this handles float encapsulation. as long as there is no height on the div, we can use this method */
+      color: #FFF; 
+    }
+    .header #logo {
+      display: block;
+      float: left;
+      height: 70px;/*147px;*/
+      width: 120px;
+      background: url(junit-images/logo_monarca.png) no-repeat;
+	  background-size: 80px 60px;
+      border-right: 1px solid #555;
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+      margin-right: 20px;
+    }   
+    .header div {
+      margin-top: 8px;
+      font-family: "Helvetica Neue", Arial, Helvetica;
+      font-size: 30px; 
+      font-weight: 300; 
+    }

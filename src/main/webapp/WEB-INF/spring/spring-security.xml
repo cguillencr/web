@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.0.3.xsd">
+ 	
+	<http auto-config="true">
+		<intercept-url access="IS_AUTHENTICATED_ANONYMOUSLY" pattern="/login"/> 
+		<intercept-url access="IS_AUTHENTICATED_ANONYMOUSLY" pattern="/loginfailed"/> 
+		<intercept-url access="IS_AUTHENTICATED_ANONYMOUSLY" pattern="/resources/**"/>
+		<intercept-url access="ROLE_projectManager,ROLE_tester,ROLE_developer,ROLE_listener" pattern="/**/**/**/execute"/>
+		<intercept-url access="ROLE_projectManager,ROLE_tester,ROLE_developer" pattern="/**"/>
+			<form-login login-page="/login" default-target-url="/"
+			authentication-failure-url="/loginfailed"  />
+		<logout logout-success-url="/login" />		
+		 <remember-me user-service-ref="UserManagerInterface" />
+	</http>
+	  	  
+  <beans:bean id="UserManagerInterface" class="org.monarca.services.UserManager" /> 
+	 <authentication-manager>
+	 	 <authentication-provider user-service-ref="UserManagerInterface"> 
+	 	  	<password-encoder hash="sha" />	
+	 	  </authentication-provider> 	 
+	  </authentication-manager>
+
+ 
+</beans:beans>

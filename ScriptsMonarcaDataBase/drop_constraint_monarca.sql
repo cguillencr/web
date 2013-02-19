@@ -1,0 +1,13 @@
+ALTER TABLE build DROP FOREIGN KEY  FKBuildBranch;
+
+ALTER TABLE branch DROP FOREIGN KEY FKBranchProject;
+
+ALTER TABLE activity DROP FOREIGN KEY FkActivityTopic;
+
+ALTER TABLE activity DROP FOREIGN KEY FkActivityRole;
+
+ALTER TABLE userRole DROP FOREIGN KEY FkUserRoleRole;
+
+ALTER TABLE userRole DROP FOREIGN KEY FkUserRoleUser;
+
+ALTER TABLE topic DROP INDEX UniqueKey;
